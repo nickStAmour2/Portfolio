@@ -1,0 +1,32 @@
+[
+  {
+    "type": "running",
+    "distance": 5000,
+    "time": 755,
+    "meters": true
+  },
+  {
+    "type": "running",
+    "distance": 26,
+    "time": 7360,
+    "meters": false 
+  },
+  {
+    "type": "running",
+    "distance": 100,
+    "time": 44856,
+    "meters": false
+  },
+  {
+    "type": "swimming",
+    "distance": 100,
+    "time": 47,
+    "meters": true
+  },
+  {
+    "type": "swimming",
+    "distance": 50,
+    "time": 20,
+    "meters": true
+  }
+]

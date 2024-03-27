@@ -1,0 +1,158 @@
+/* CSS for small screens (e.g., mobile) */
+@media screen and (max-width: 768px) {
+    /* Adjust the navigation menu for small screens */
+    nav ul {
+      flex-direction: column; /* Stack links vertically */
+    }
+    nav li {
+      margin: 10px 0; /* Add spacing between links */
+    }
+  }
+  
+  /* CSS for large screens (e.g., desktop) */
+  @media screen and (min-width: 769px) {
+    /* Reset navigation menu styles for large screens */
+    nav ul {
+      flex-direction: row; /* Display links in a row */
+    }
+    nav li {
+      margin: 0 20px; /* Adjust spacing between links */
+    }
+  }
+
+  @font-face {
+    font-family: 'sans-serif'; /* Replace with the desired font name */
+    src: url('your-font.woff2') format('woff2'), /* URL to the WOFF2 font file */
+         url('your-font.woff') format('woff'); /* URL to the WOFF font file */
+    font-weight: 400; /* Specify the font weight */
+    font-style: normal; /* Specify the font style (normal, italic, etc.) */
+  }
+
+  @font-face {
+    font-family: 'serif'; /* Replace with the desired font name */
+    src: url('your-font.woff2') format('woff2'), /* URL to the WOFF2 font file */
+         url('your-font.woff') format('woff'); /* URL to the WOFF font file */
+    font-weight: 400; /* Specify the font weight */
+    font-style: normal; /* Specify the font style (normal, italic, etc.) */
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Sans-Serif-Font', Arial, sans-serif;
+  }
+  
+  p {
+    font-family: 'Serif-Font', Times New Roman, serif;
+  }
+
+  
+
+  
+
+  /* Reset some default styles */
+body, h1, h2, h3, h4, p, ul, li, form {
+  margin: 0;
+  padding: 0;
+}
+
+.custom-navbar-container {
+  max-width: 35%;
+  margin-left: 7%;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  background-color: #f8f8f8;
+  color: #333;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 1em 0;
+  
+}
+
+header h1 {
+  margin-left: 5%;
+}
+
+nav ul {
+  list-style: none;
+  margin-left: 5%;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+}
+
+main {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+#hero {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#featured-workouts {
+  margin-bottom: 30px;
+}
+
+section h3 {
+  border-bottom: 2px solid #333;
+  padding-bottom: 10px;
+}
+
+form {
+  margin-top: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="submit"] {
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1em 0;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 600px) {
+  header nav ul {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  header nav ul li {
+    display: block;
+    margin-bottom: 10px;
+  }
+}

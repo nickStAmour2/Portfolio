@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Nick St. Amour">
+  <title>Cardio</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" 
+  rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" 
+  crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Cardiovascular Fitness</h1>
+    <div class="custom-navbar-container">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a href="index.html">Home</a></li>
+          <li class="nav-item"><a href="cardio.html">Cardio</a></li>
+          <li class="nav-item"><a href="stretch.html">Stretch</a></li>
+          <li class="nav-item"><a href="resistance.html">Resistance</a></li>
+          <li class="nav-item"><a href="nutrition.html">Nutrition</a></li>
+        </ul>
+      
+      </nav>
+    </div>
+  </header>
+  <main>
+    
+    <!--<img src="images/35847809_m.jpg" alt="A person doing a workout" width="300" height="200">-->
+
+    
+
+    <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="card">
+              <img src="images/35847809_m.jpg" alt="People on treadmills" width="295" height="200">
+              <div class="card-body">
+                <h5 class="card-title">Add a new exercise</h5>
+                <p class="card-text">There are many different ways to do cardio that we don't have here, so feel free to put in your own cardio variation.</p>
+                <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addValues">Insert your PR here</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="card">
+              <img src="images/istockphoto-1341077450-612x612.jpg" alt="Person jogging" width="250" height="200">
+              <div class="card-body">
+                <h5 class="card-title">Edit existing exercises</h5>
+                <p class="card-text">If your PR is improved then change it here!</p>
+                <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editValues">Insert your PR here</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="card">
+              <img src="images/swimmer102827381.jpg" alt="Person swimming">
+              <div class="card-body">
+                <h5 class="card-title">Delete exercise</h5>
+                <p class="card-text">Maybe your exercise variation isn't actually that effective, delete it here.</p>
+                <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#deleteValues">Insert your PR here</a>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+    </div>
+
+    
+    <div class="modal fade" id="addValues" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalCenterTitle">Add an exercise</h5>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="recipient-name" class="col-form-label">Exercise:</label>
+                <input type="text" class="form-control" id="exerciseType">
+              </div>
+              <div class="form-group">
+                <label for="message-text" class="col-form-label">PR:</label>
+                <input type="text" class="form-control" id="PR">
+              </div>
+            </form>
+          </div>
+          <br>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" onclick="saveExercise()" data-bs-dismiss="modal">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+
+    <!-- This is where you will save data to local storage -->
+    <script>
+
+      function saveExercise() {
+        let listGroup = document.querySelector('#exerciseList');
+        // Get input values
+        let exerciseType = document.querySelector('#exerciseType').value;
+        let PR = document.querySelector('#PR').value;
+
+        // Create an object to store exercise data
+        let exerciseData = {
+          exerciseType: exerciseType,
+          PR: PR
+        };
+
+        // Convert the object to a JSON string
+        let exerciseDataJSON = JSON.stringify(exerciseData);
+
+        // Save to local storage
+        localStorage.setItem(exerciseType, exerciseDataJSON);
+
+
+        let listItem = document.createElement('li');
+        listItem.classList.add('list-group-item');
+        
+        listItem.textContent = exerciseType + ': ' + PR;
+        listGroup.appendChild(listItem);
+        
+
+        // Optionally, you can clear the input fields after saving
+        document.querySelector('#exerciseType').value = '';
+        document.querySelector('#PR').value = '';
+
+        //location.reload();
+        reloadList();
+      }
+
+      
+    </script>
+
+
+    <div class="modal fade" id="editValues" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalCenterTitle">Update your PR</h5>
+            
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="recipient-name" class="col-form-label">Exercise:</label>
+                <input type="text" class="form-control" id="exerciseTypeUp">
+              </div>
+              <div class="form-group">
+                <label for="message-text" class="col-form-label">New PR:</label>
+                <input type="text" class="form-control" id="newPR">
+              </div>
+            </form>
+          </div>
+          <br>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" onclick="updateExercise()" data-bs-dismiss="modal">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+
+      function updateExercise() {
+        
+
+        // this code changes local storage
+
+        let exerciseTypeUp = document.querySelector('#exerciseTypeUp').value;
+
+        // new PR
+        let newPR = document.querySelector('#newPR').value; 
+
+        let existingData = localStorage.getItem(exerciseTypeUp);
+
+        let existingObject = existingData ? JSON.parse(existingData) : {};
+
+        existingObject.PR = newPR;
+
+        let updatedData = JSON.stringify(existingObject);
+
+        localStorage.setItem(exerciseTypeUp, updatedData);
+
+
+        // this code changes the listgroup
+        //let listItemToUpdate = document.getElementById(newPR);
+        //listItemToUpdate.textContent = exerciseTypeUp + ': ' + newPR;
+        
+        // resets inputs to 0
+        document.querySelector('#exerciseTypeUp').value = '';
+        document.querySelector('#newPR').value = '';
+
+        //location.reload();
+        reloadList();
+      }
+
+    </script>
+
+
+    <div class="modal fade" id="deleteValues" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalCenterTitle">Delete an exercise</h5>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="recipient-name" class="col-form-label">Exercise to Delete:</label>
+                <input type="text" class="form-control" id="exerciseToDelete">
+              </div>
+            </form>
+          </div>
+          <br>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="deleteExercise()">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script>
+      
+      function deleteExercise() {
+
+        let exerciseToDelete = document.querySelector('#exerciseToDelete').value;
+        localStorage.removeItem(exerciseToDelete);
+
+        //location.reload();
+        document.querySelector('#exerciseToDelete').value = '';
+        reloadList();
+      }
+    </script>
+    
+    <br>
+
+    <h2>World Records in Cardio</h2>
+
+    <br>
+
+    <script>
+   
+      function fetchCardioData() {
+       
+        var jsonFile = 'data/cardio.json';
+  
+        fetch(jsonFile)
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
+            return response.json(); 
+          })
+          .then(data => {
+            //here is where I will dynamically print the world records
+            console.log('Fetched JSON data:', data);
+
+            let ul = document.createElement('ul');
+            ul.classList.add('list-group');
+
+            data.forEach(entry => {
+              let li = document.createElement('li');
+              li.classList.add('list-group-item');
+              
+              let measurement = 'miles';
+              if (entry.meters) {
+                measurement = 'meters'
+              }
+
+              li.innerText += 'The world record for ' + entry.type + ' ' + entry.distance + ' ' + measurement + ' is ' + entry.time + ' seconds.';
+              ul.appendChild(li);
+            });
+
+            let container = document.querySelector('.container2');
+
+
+            container.appendChild(ul);
+          })
+          .catch(error => {
+            
+            console.error('Error fetching JSON:', error);
+          });
+      }
+  
+   
+      document.addEventListener('DOMContentLoaded', fetchCardioData);
+    </script>
+
+    <div class='container2'></div>
+
+    
+    <br>
+
+    <h2>Personal Records for Strength or Cardio</h2>
+
+    <br>
+
+    <div class="listContainer" id='containerId'>
+    <ul class="list-group" id="exerciseList">
+      <!-- List items will be dynamically added here -->
+    </ul>
+  </div>
+
+    <script>
+
+      function reloadList() {
+
+      let listGroup = document.querySelector('#exerciseList');
+      listGroup.remove();
+      let newListGroup = document.createElement('ul');
+      newListGroup.setAttribute('id', 'exerciseList')
+
+      // Step 2: Set attributes or classes if necessary
+      newListGroup.classList.add('list-group');
+
+      for (let key in localStorage) {
+        if (localStorage.hasOwnProperty(key)) {
+          // Access each item using the key
+          let value = localStorage.getItem(key);
+          let parsedObject = JSON.parse(value);
+
+          let listItem = document.createElement('li');
+          listItem.classList.add('list-group-item');
+          listItem.setAttribute('id', key);
+        
+          listItem.textContent = key + ': ' + parsedObject.PR;
+          newListGroup.appendChild(listItem);
+          
+        }
+      }
+      let container = document.getElementById('containerId');
+      container.appendChild(newListGroup);
+    }
+
+    </script>
+
+    <script>
+      reloadList();
+    </script>
+    
+
+
+
+    <br>
+
+    
+    <!-- Page content goes here -->
+    <p class="cardio-paragraph">
+      The purpose of cardio is to workout your cardiovascular system, this includes: your lungs, heart, 
+      and blood vessels. The main form of cardio that most people do is long distance running. There 
+      are other forms however like: swimming, boxercise, jumping jacks, and many more. The main point of
+      a cardio exercise is to do repetitive movements that don't have much resistance to them.
+      <a href="https://www.healthline.com/health/fitness-exercise/cardio-exercises-list">Visit Cardio Website</a>
+
+    </p>
+  </main>
+  <br>
+  
+  
+</body>
+</html>
