@@ -1,0 +1,25 @@
+Running suite(s): Default
+17%: Checks: 28, Failures: 23, Errors: 0
+public.c:139:F:Public:C_func_decode_irmovq:0: Assertion 'valE == (y86_reg_t)inst.valC.v' failed
+public.c:198:F:Public:C_func_decode_opq:0: Assertion 'valE == expected_valE' failed
+public.c:278:F:Public:C_func_memory_irmovq:0: Assertion 'cpu.reg[reg] == valE' failed
+public.c:307:F:Public:C_func_memory_opq:0: Assertion 'cpu.reg[reg] == valE' failed
+public.c:251:F:Public:C_error_decode_invalid_opq:0: Assertion 'cpu.stat == INS' failed
+private.c:61:F:Private:B_func_decode_rmmovq:0: Assertion 'valA == expected_valA' failed
+private.c:153:F:Private:B_func_decode_mrmovq:0: Assertion 'valE == expected_valE' failed
+private.c:183:F:Private:B_func_decode_pushq:0: Assertion 'valE == regs[RSP] - 8' failed
+private.c:214:F:Private:B_func_decode_popq:0: Assertion 'valE == regs[RSP] + 8' failed
+private.c:245:F:Private:B_func_decode_call:0: Assertion 'valE == regs[RSP] - 8' failed
+private.c:275:F:Private:B_func_decode_ret:0: Assertion 'valE == regs[RSP] + 8' failed
+private.c:324:F:Private:B_func_memory_rmmovq:0: Assertion 'value_in_memory == val' failed
+private.c:373:F:Private:B_func_memory_mrmovq:0: Assertion 'cpu.reg[ra] == val' failed
+private.c:420:F:Private:B_func_memory_pushq:0: Assertion 'cpu.reg[RSP] == rsp-8' failed
+private.c:466:F:Private:B_func_memory_popq:0: Assertion 'cpu.reg[ra] == val' failed
+private.c:512:F:Private:B_func_memory_call:0: Assertion 'cpu.reg[RSP] == rsp-8' failed
+private.c:556:F:Private:B_func_memory_ret:0: Assertion 'cpu.reg[RSP] == rsp+8' failed
+private.c:760:F:Private:B_error_memory_mrmovq_bad_memory_address:0: Assertion 'cpu.stat == ADR' failed
+private.c:603:F:Private:A_func_decode_cmov:0: Assertion 'valE == expected_valE' failed
+private.c:664:F:Private:A_func_decode_jump:0: Assertion 'cnd == expected_cnd[jump][0]' failed
+private.c:698:F:Private:A_error_decode_invalid_icode:0: Assertion 'cpu.stat == INS' failed
+private.c:718:F:Private:A_error_decode_invalid_cmov:0: Assertion 'cpu.stat == INS' failed
+private.c:738:F:Private:A_error_decode_invalid_jump:0: Assertion 'cpu.stat == INS' failed

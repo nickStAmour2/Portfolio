@@ -1,0 +1,26 @@
+==3557791== Memcheck, a memory error detector
+==3557791== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==3557791== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==3557791== Command: ../y86 -e inputs/bad_addr.o
+==3557791== 
+Beginning execution at 0x0100
+Y86 CPU state:
+  %rip: 0000000000000115   flags: Z0 S0 O0     HLT
+  %rax: 0000000000000000    %rcx: 0000000000000000
+  %rdx: 0000000000000000    %rbx: 0000000000000000
+  %rsp: 0000000000000000    %rbp: 0000000000000000
+  %rsi: 0000000000000000    %rdi: 0000000000000000
+   %r8: 0000000000000000     %r9: 0000000000000000
+  %r10: 0000000000000000    %r11: 0000000000000000
+  %r12: 0000000000000000    %r13: 0000000000000000
+  %r14: 0000000000000000
+Total execution count: 3
+==3557791== 
+==3557791== HEAP SUMMARY:
+==3557791==     in use at exit: 0 bytes in 0 blocks
+==3557791==   total heap usage: 4 allocs, 4 frees, 20,952 bytes allocated
+==3557791== 
+==3557791== All heap blocks were freed -- no leaks are possible
+==3557791== 
+==3557791== For lists of detected and suppressed errors, rerun with: -s
+==3557791== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

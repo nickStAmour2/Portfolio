@@ -1,0 +1,37 @@
+D_help                         pass
+D_nop_hlt                      pass
+D_nop_hlt_debug                pass
+C_irmovq                       FAIL (see tests/outputs/C_irmovq.diff for details)
+C_irmovq_debug                 FAIL (see tests/outputs/C_irmovq_debug.diff for details)
+C_opq                          FAIL (see tests/outputs/C_opq.diff for details)
+C_opq_debug                    FAIL (see tests/outputs/C_opq_debug.diff for details)
+B_pushpop                      FAIL (see tests/outputs/B_pushpop.diff for details)
+B_pushpop_debug                FAIL (see tests/outputs/B_pushpop_debug.diff for details)
+B_memreg                       FAIL (see tests/outputs/B_memreg.diff for details)
+B_memreg_debug                 FAIL (see tests/outputs/B_memreg_debug.diff for details)
+B_simple                       FAIL (see tests/outputs/B_simple.diff for details)
+B_simple_entry                 FAIL (see tests/outputs/B_simple_entry.diff for details)
+B_func_debug                   FAIL (see tests/outputs/B_func_debug.diff for details)
+A_cmov_debug                   FAIL (see tests/outputs/A_cmov_debug.diff for details)
+A_cjmp_debug                   FAIL (see tests/outputs/A_cjmp_debug.diff for details)
+A_opq_of_debug                 FAIL (see tests/outputs/A_opq_of_debug.diff for details)
+A_movflags_debug               FAIL (see tests/outputs/A_movflags_debug.diff for details)
+A_pushpop_rsp_debug            FAIL (see tests/outputs/A_pushpop_rsp_debug.diff for details)
+A_bad_addr                     FAIL (see tests/outputs/A_bad_addr.diff for details)
+A_bad_addr_debug               FAIL (see tests/outputs/A_bad_addr_debug.diff for details)
+A_bad_insn                     FAIL (see tests/outputs/A_bad_insn.diff for details)
+A_bad_insn_debug               FAIL (see tests/outputs/A_bad_insn_debug.diff for details)
+A_bad_nostack                  FAIL (see tests/outputs/A_bad_nostack.diff for details)
+A_missing_file                 pass
+A_both_flags                   pass
+A_extra_params                 pass
+A_unaligned1                   FAIL (see tests/outputs/A_unaligned1.diff for details)
+A_unaligned2                   FAIL (see tests/outputs/A_unaligned2.diff for details)
+A_iotrap_char_debug            FAIL (see tests/outputs/A_iotrap_char_debug.diff for details)
+A_iotrap_dec_debug             FAIL (see tests/outputs/A_iotrap_dec_debug.diff for details)
+A_iotrap_dec_bad               FAIL (see tests/outputs/A_iotrap_dec_bad.diff for details)
+A_iotrap_str_debug             FAIL (see tests/outputs/A_iotrap_str_debug.diff for details)
+A_iotrap_escaped_string        FAIL (see tests/outputs/A_iotrap_escaped_string.diff for details)
+A_iotrap_buf_debug             FAIL (see tests/outputs/A_iotrap_buf_debug.diff for details)
+No memory leak found.
+No uninitialized value found.
