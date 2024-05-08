@@ -6,31 +6,50 @@
     <title>My Website</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
+            background-color: #f8f8f8;
+            color: #333;
         }
         .container {
             max-width: 800px;
-            margin: 0 auto;
+            margin: 20px auto;
             padding: 20px;
-            background-color: #ffffff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
         }
         h1 {
-            color: #333333;
+            color: #444;
+            font-size: 36px;
+            margin-bottom: 20px;
+            text-align: center;
         }
         p {
-            color: #666666;
+            color: #666;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #0056b3;
+        }
+        .link {
+            display: block;
+            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Welcome to My Website</h1>
-        <p><a href="projectv1">Link to Exercise Website</a></p>
-        <p><a href="p4-interp">Link to y86 project</a></p>
+        <p class="link"><a href="projectv1">Link to Exercise Website</a></p>
+        <p class="link"><a href="p4-interp">Link to y86 project</a></p>
     </div>
 </body>
 </html>
