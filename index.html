@@ -2,124 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Teacher Homepage</title>
-    <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
     <style>
-        /* Add your CSS styles for Teacher Homepage */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            color: #333;
+            background-color: #f0f0f0;
         }
-
-        .navbar {
-            background-color: #007bff;
-            overflow: hidden;
-        }
-
-        .navbar ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-
-        .navbar ul li {
-            display: inline;
-        }
-
-        .navbar ul li a {
-            display: block;
-            padding: 20px;
-            color: white;
-            text-decoration: none;
-        }
-
-        .navbar ul li a:hover {
-            background-color: #0056b3;
-        }
-
         .container {
             max-width: 800px;
-            margin: 20px auto;
+            margin: 0 auto;
             padding: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-
-        h1, h2 {
-            margin-top: 0;
-            text-align: center;
+        h1 {
+            color: #333333;
         }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .question {
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            margin-bottom: 10px;
-            padding: 10px;
-        }
-
-        .question_text {
-            font-weight: bold;
-        }
-
-        .question_view, .question_delete {
-            display: inline-block;
-            margin-left: 10px;
-        }
-
-        .question_delete form {
-            display: inline;
-        }
-
-        .message {
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #dff0d8;
-            border: 1px solid #d6e9c6;
-            border-radius: 4px;
-            color: #3c763d;
+        p {
+            color: #666666;
         }
     </style>
 </head>
 <body>
-    <nav class="navbar">
-        <ul>
-            <li><a href="{% url 'teacher_home' %}">Home</a></li>
-            <li><a href="{% url 'add_question' %}">Add Question</a></li>
-        </ul>
-    </nav>
-    <section class="container">
-        <h1>Welcome, Teacher!</h1>
-        <h2>Your Questions:</h2>
-        <ul>
-            {% if questions %}
-                {% for question in questions %}
-                    <li class="question">
-                        <div class="question_text">{{ question.text }}</div>
-                        <div class="question_view"><a href="{% url 'question_detail' question.id %}">View Question</a></div>
-                        <div class="question_delete">
-                            <form action="{% url 'delete_question' question.id %}" method="post" style="display: inline;">
-                                {% csrf_token %}
-                                <button type="submit">Delete</button>
-                            </form>
-                        </div>
-                    </li>
-                {% endfor %}
-            {% else %}
-                <p class="message">There are no questions stored.</p>
-            {% endif %}
-        </ul>
-    </section>
+    <div class="container">
+        <h1>Welcome to My Website</h1>
+        <p><a href="projectv1">Link to Exercise Website</a></p>
+        <p><a href="p4-interp">Link to y86 project</a></p>
+    </div>
 </body>
 </html>
-
